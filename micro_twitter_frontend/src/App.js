@@ -47,6 +47,7 @@ export default function App() {
         return;
       } else {
         console.log("We have the ethereum object", ethereum);
+        getAllTweets();
       }
       // check if we are authorized
       const accounts = await ethereum.request({ method: 'eth_accounts' });
@@ -54,7 +55,7 @@ export default function App() {
         const account = accounts[0]
         console.log("Found authorized account")
         setCurrentAccount(account)
-        getAllTweets();
+       
       }
       else {
         console.log("No authorized account found")
